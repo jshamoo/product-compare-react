@@ -15,3 +15,16 @@ export const compare = product => ({
     type: types.COMPARE_PRODUCT,
     product
   })
+
+export const filterOutBlue = () => ({
+   type: types.FILTER_OUT_BLUE
+})
+
+export const addUserPrice = (userPrice) => ({
+  type: types.ADD_USER_PRICE,
+  userPrice
+})
+
+export const filterPrice = () => ({
+  type: types.FILTER_PRICE,
+})

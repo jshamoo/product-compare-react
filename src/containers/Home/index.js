@@ -10,7 +10,7 @@ class Home extends Component {
   }
 
   render() {
-    const {products, actions} = this.props;
+    const {products, actions, userPrice} = this.props;
     const compareProducts = products.filter(product => product.compare);
 
     return (
@@ -21,6 +21,11 @@ class Home extends Component {
           </div>
         </div>
         <ProductList products={products} compare={actions.compare}/>
+        <button onClick={actions.filterOutBlue}>Filter</button>
+        <div>
+          <input type="number" value={userPrice} onChange={e => actions.addUserPrice(e.target.value)}/>
+          <button onClick={actions.filterPrice}>Submit</button>
+        </div>
         {compareProducts.length >= 2 &&
           <Compare products={compareProducts}/>
         }
@@ -31,7 +36,8 @@ class Home extends Component {
 
 export default connect(
   state => ({
-    products: state.product.products
+    products: state.product.products,
+    userPrice: state.product.userPrice,
   }),
   dispatch => ({
     actions: bindActionCreators(productActions, dispatch)

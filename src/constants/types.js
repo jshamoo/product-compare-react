@@ -1,2 +1,5 @@
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const COMPARE_PRODUCT = 'COMPARE_PRODUCT';
+export const FILTER_OUT_BLUE = 'FILTER_OUT_BLUE';
+export const ADD_USER_PRICE = 'ADD_USER_PRICE';
+export const FILTER_PRICE = 'FILTER_PRICE';
